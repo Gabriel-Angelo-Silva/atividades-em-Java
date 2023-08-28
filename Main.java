@@ -4,22 +4,29 @@ public class Main {
         c1.tinta = 100;
         c1.cor = "azul";
         c1.marca = "bic";
-        c1.escrever();
-        
+
         Papel p1 = new Papel();
         p1.paginasV = 100;
         p1.papelU = 1;
-        p1.marca = "Caderno Daora 2";
-        System.out.println("Total de paginas ainda disponivel");
-        System.out.println(p1.preencher_Papel(p1.papelU, p1.paginasV));
+
+        Pessoa pessoa = new Pessoa();
+        pessoa.nome = "Carrapato frenetico";
+        pessoa.caneta = c1;
+        pessoa.papel = p1;
+
+        System.out.println(pessoa.nome + " está escrevendo...");
+        pessoa.caneta.escrever();
+
+        System.out.println("Total de páginas ainda disponíveis:");
+        System.out.println(pessoa.nome + " usou " + p1.papelU + " páginas. Restam " + pessoa.papel.preencher_Papel(p1.papelU, p1.paginasV) + " páginas.");
     }
 }
 
 class Caneta {
     String cor, marca;
     int tinta;
+
     public void escrever() {
-        System.out.println("Escrevendo...");
         System.out.println("Escrito");
     }
 }
@@ -27,8 +34,14 @@ class Caneta {
 class Papel {
     String marca;
     int papelU, paginasV;
+
     public int preencher_Papel(int papelU, int paginasV) {
         paginasV -= papelU;
         return paginasV;
     }
+}
+class Pessoa {
+    String nome;
+    Caneta caneta;
+    Papel papel;
 }
