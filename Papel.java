@@ -1,4 +1,4 @@
-class Papel {
+Public class Papel {
     String marca;
     int papelU, paginasV;
 
