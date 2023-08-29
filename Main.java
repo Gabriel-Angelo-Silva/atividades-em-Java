@@ -21,27 +21,3 @@ public class Main {
         System.out.println(pessoa.nome + " usou " + p1.papelU + " páginas. Restam " + pessoa.papel.preencher_Papel(p1.papelU, p1.paginasV) + " páginas.");
     }
 }
-
-class Caneta {
-    String cor, marca;
-    int tinta;
-
-    public void escrever() {
-        System.out.println("Escrito");
-    }
-}
-
-class Papel {
-    String marca;
-    int papelU, paginasV;
-
-    public int preencher_Papel(int papelU, int paginasV) {
-        paginasV -= papelU;
-        return paginasV;
-    }
-}
-class Pessoa {
-    String nome;
-    Caneta caneta;
-    Papel papel;
-}
