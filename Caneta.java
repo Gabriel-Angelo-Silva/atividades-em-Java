@@ -1,4 +1,4 @@
-class Caneta {
+public class Caneta {
     String cor, marca;
     int tinta;
 
